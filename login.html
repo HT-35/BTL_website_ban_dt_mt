@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <link rel="stylesheet" href="./bootstrap-4.0.0/bootstrap-4.0.0/bootstrap.min.css">
     <script src="./bootstrap-4.0.0/bootstrap-4.0.0/jquery-3.6.1.min.js"></script>
     <script src="./bootstrap-4.0.0/bootstrap-4.0.0/bootstrap.min.js"></script>
@@ -16,38 +17,66 @@
     <script>
         $(document).ready(function() {
             //  KT MSSV
-            $("#MSSV").blur(function() {
-                var mauKT = /^[0-9]{9}$/;
-                if ($("#MSSV").val() == "")
-                    alert("Vui Long Nhap Mã Khách Hàng");
-                else if (!mauKT.test($("#MSSV").val())) {
-                    alert("Sai Cú Pháp")
-                } else {
-                    alert("Đúng Rồi")
-                }
-            })
+
 
             //  KT MSSV
             $("#HT").blur(function() {
                 var mauKT = /^[A-Z][a-zA-Z]+(\s[A-Z][a-zA-Z]+)*$/;
-                if ($("#MSSV").val() == "")
+                if ($("#HT").val() == "")
                     alert("Vui Long Nhập Họ Và Tên");
-                else if (!mauKT.test($("#MSSV").val())) {
+                else if (!mauKT.test($("#HT").val())) {
                     alert("Sai Cú Pháp")
                 } else {
-                    alert("Đúng Rồi")
+                    alert(" Bạn Đã Nhập Đúng Rồi")
                 }
             })
 
             //KT QUOC TICH
-            $("#KHOA").blur(function() {
-                var mauKT = /^[A-Z][a-zA-Z]+(\s[A-Z][a-zA-Z]+)*$/;
-                if ($("#MSSV").val() == "")
-                    alert("Vui Long Nhập Quốc Tịch");
-                else if (!mauKT.test($("#MSSV").val())) {
+
+
+
+
+            $("#email").blur(function() {
+
+
+                var mauKT = /^([a-z0-9_\.-]+)@([\diuh\.-]+)\.([\edu\.-]+)\.([vn\.]{2,6})$/;
+                if ($("#email").val() == "")
+                    alert("Vui Long Nhập Email");
+                else if (!mauKT.test($("#email").val())) {
                     alert("Sai Cú Pháp")
                 } else {
-                    alert("Đúng Rồi")
+                    alert(" Bạn Đã Nhập Đúng Rồi")
+                }
+            })
+
+
+
+            $("#SDT").blur(function() {
+                // var mauKT =  /^(0|\+84)(\s|\.)?((3[2-9])|(5[689])|(7[06-9])|(8[1-689])|(9[0-46-9]))(\d)(\s|\.)?(\d{3})(\s|\.)?(\d{3})$/;
+
+
+                var mauKT = /^(0|\+84)(\s|\.)?((3[2-9])|(5[689])|(7[06-9])|(8[1-689])|(9[0-46-9]))(\d)(\s|\.)?(\d{3})(\s|\.)?(\d{3})$/;
+
+                if ($("#SDT").val() == "")
+                    alert("Vui Lòng Nhập SDT");
+                else if (!mauKT.test($("#SDT").val())) {
+                    alert("Nhập sai cú pháp")
+                } else {
+                    alert("Bạn Đã Nhập Đúng Rồi")
+                }
+            })
+
+
+            $("#MK").blur(function() {
+                // var mauKT =  /^(0|\+84)(\s|\.)?((3[2-9])|(5[689])|(7[06-9])|(8[1-689])|(9[0-46-9]))(\d)(\s|\.)?(\d{3})(\s|\.)?(\d{3})$/;
+                var mauKT = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+                if ($("#MK").val() == "")
+                    alert("Vui Lòng Nhập Mật Khẩu");
+                else if (!mauKT.test($("#MK").val())) {
+                    alert("Nhập sai cú pháp")
+                } else {
+                    alert("Bạn Đã Nhập Đúng Rồi")
                 }
             })
 
@@ -108,29 +137,9 @@
 
             <br>
 
-            <div class="row mb-3 ">
 
-                <div class="col-12 col-sm-12 col-md-6 text-center ">
-                    <label class=" " for=" ">QUỐC TỊCH</label>
-                </div>
 
-                <div class="col-12 col-sm-12 col-md-6 ">
-                    <input id="KHOA" class="ml-5 " type="text " placeholder="NHẬP QUỐC TỊCH ">
-                </div>
-                <br>
 
-            </div>
-            <div class="row mb-3">
-
-                <div class="col-12 col-sm-12 col-md-6 text-center">
-                    <label class=" " for=" ">MÃ KHÁCH HÀNG</label>
-                </div>
-
-                <div class="col-12 col-sm-12 col-md-6 ">
-                    <input id="MSSV" class="ml-5 " type="text " placeholder="NHẬP MÃ KHÁCH HÀNG ">
-                </div>
-
-            </div>
 
 
 
@@ -155,15 +164,43 @@
             <div class="row mb-3 ">
 
                 <div class="col-12 col-sm-12 col-md-6 text-center ">
-                    <label class=" " for=" ">NGÀY MUA HÀNG</label>
+                    <label class=" " for=" ">Email</label>
                 </div>
 
                 <div class="col-12 col-sm-12 col-md-6 ">
-                    <input id="" class="ml-5 " type="date">
+                    <input id="email" class="ml-5 " type="text " placeholder="Nhap email ">
                 </div>
                 <br>
 
             </div>
+
+
+            <div class="row mb-3 ">
+
+                <div class="col-12 col-sm-12 col-md-6 text-center ">
+                    <label class=" " for=" ">Số Điện Thoại</label>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-6 ">
+                    <input id="SDT" class="ml-5 " type="text " placeholder="Nhap So Dien Thoai ">
+                </div>
+                <br>
+
+            </div>
+
+            <div class="row mb-3">
+
+                <div class="col-12 col-sm-12 col-md-6 text-center">
+                    <label class=" " for=" ">Mật Khẩu</label>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-6 ">
+                    <input id="MK" class="ml-5 " type="text " placeholder="NHẬP MÃ MẬT KHẨU ">
+                </div>
+
+            </div>
+
+
 
 
 
